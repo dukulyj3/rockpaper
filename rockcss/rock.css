@@ -1,0 +1,37 @@
+/* HTML Design */
+*, 
+*::after, 
+*::before{
+margin:  0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* Topograph */
+.header{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-decoration: underline rgb(240, 238, 238) 13px;
+    color: rgb(147, 151, 147);
+    font-style: italic;
+    font-weight: bold;
+    font-size: 2rem;
+}
+/* Player Score Container */
+.player-score{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:120px;
+}
+.st-player, .nd-player{
+    width: fit-content;
+    padding: 3px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px 2px lightgray;
+    margin-bottom: 10px;
+
+}
+
+/* User Input Design */
