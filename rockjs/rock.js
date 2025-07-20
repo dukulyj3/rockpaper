@@ -1,17 +1,35 @@
-const userName = document.querySelector('#user-2');
+
 const addBtn = document.querySelector('#submit-btn');
+const firstPlayer = document.querySelector('.st-player');
+const secondPlayer = document.querySelector('.nd-player');
 const wrapper = document.querySelectorAll('.time-left-wrapper');
 
+/**
+ * @param [string] -> set user variable and get user data from input
+ * @return [string] -> to return user data per validation in conditional statement
+ */
+function userNameData() {
+    const userData = document.querySelectorAll('.user-data');
+    const first = document.querySelector('#player-1');
+    const second = document.querySelector('#player-2');
 
- function firstUser() {
-    const user = document.createElement('span');
-    const paragraph = 
+    userData.forEach(itemList=>{
     
- }
-
+      if(itemList.value.trim() !== "" && itemList.id === 'user-2'){
+        const span = document.createElement('span');
+        span.textContent = itemList.value;
+            first.appendChild(span)
+            itemList.value = "";
+        }else{
+          if(itemList.value.trim() !== "" && itemList.id === 'user-1'){
+          const span = document.createElement('span');
+         span.textContent = itemList.value;
+           second.appendChild(span);
+           itemList.value = '';
+        }}})}
 function updateTimeLeft() {
      wrapper.forEach((container, index)=>{
-        let time = userName.value;
+        let time = 120;
         const paragraph = document.createElement('p');
         const span = document.createElement('span');
         paragraph.style.fontSize = '1.2rem';
@@ -35,16 +53,14 @@ function updateTimeLeft() {
                 if(time === 0) clearInterval(timer);
         
         }, 1000)
-        return;
-     })
-}
-
-
-
-addBtn.addEventListener('click', () =>{
+    return;
+     })}
+   addBtn.addEventListener('click', () =>{
 updateTimeLeft();
-});
-
+//firstUser();
+//secondUser();
+userNameData()
+});  
 
 
 
