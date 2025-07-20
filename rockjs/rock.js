@@ -27,9 +27,17 @@ function userNameData() {
            second.appendChild(span);
            itemList.value = '';
         }}})}
+
+/**
+ * @param [number] -> In the updateTimeLeft() function - the timeframe 
+ * for the game between users is set. When the user clicks the play button,
+ * while playing the game, the time will continue to decrease. When the time 
+ * reaches 0 - the game will automatically end.
+ * @return [type] -> to return the game time
+ */
 function updateTimeLeft() {
      wrapper.forEach((container, index)=>{
-        let time = 120;
+        const time = 120;
         const paragraph = document.createElement('p');
         const span = document.createElement('span');
         paragraph.style.fontSize = '1.2rem';
@@ -57,8 +65,6 @@ function updateTimeLeft() {
      })}
    addBtn.addEventListener('click', () =>{
 updateTimeLeft();
-//firstUser();
-//secondUser();
 userNameData()
 });  
 
