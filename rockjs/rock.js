@@ -15,7 +15,6 @@ const trackGuesses2 = document.querySelector('#track-2');
  * @return [object] -> to return an object of intems
  */
 function objectList() {
-
       const matchTime= 150; //Time in milliseconds
       const itemList= ['scissor', 'paper', 'rock'];
       const person1 = user1.value.trim();
@@ -31,9 +30,31 @@ function objectList() {
             person2,
             matchScore,
             trackWinns
-          }}
+          }
           
           }
+          }
+  function printNames() {
+    const player1 = document.querySelector('#player-1');
+    const player2 = document.querySelector('#player-2');
+    const span1 = document.createElement('span');
+    const span2 = document.createElement('span');
+
+       span1.textContent = "";
+     if(user1.value !==""){
+        player1.textContent = "Player Name: ";
+          span1.textContent = user1.value.trim();
+          player1.appendChild(span1);
+          user1.value = "";
+          }
+          span2.textContent = "";
+          if(user2.value !==""){
+          span2.textContent = user2.value.trim();
+          player2.textContent = "Player Name: ";
+          player2.appendChild(span2);
+          user2.value = "";
+          }
+  }
 function randomisedItem() {
  let gameItems = objectList();
  if(gameItems){
@@ -77,6 +98,7 @@ addBtn.addEventListener('click', () =>{
   if(track){
   console.log("BOOOOM!")
   }
+  printNames();
 })
 
 
